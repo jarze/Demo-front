@@ -1,0 +1,73 @@
+<!--
+ * @Autor: jarze
+ * @Date: 2020-06-18 10:24:44
+ * @Desc: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contentEditable实现div可编辑</title>
+    <style>
+      html {
+        color: #333;
+        font-size: 16px;
+      }
+      section {
+        overflow: hidden;
+        border: 1px solid #e2e2e2;
+      }
+      section > div,
+      section > style {
+        box-sizing: border-box;
+        display: block;
+        width: 50%;
+        float: left;
+        height: 300px;
+        padding: 1em;
+      }
+      section > style {
+        font-family: Consolas, Monaco, monospace;
+        white-space: pre;
+        color: #333;
+        text-shadow: 0 1px 1px white;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>contentEditable实现div可编辑</h1>
+    <section>
+      <p id="choose-content">
+        <span contenteditable="false">Item1</span>
+        <span contenteditable="false">Item2</span>
+        <span contenteditable="false">Item3</span>
+        <span contenteditable="false">Item4</span>
+        <span contenteditable="false">Item5</span>
+      </p>
+      <div contenteditable="true" class="content" id="edit-content">
+        此次<span contenteditable="false">AA</span>嗷嗷<span contenteditable="false">BB</span>
+      </div>
+      <style>
+        .content {
+          -webkit-user-modify: read-write-plaintext-only;
+          overflow-wrap: break-word;
+        }
+        .content > span {
+          color: blueviolet;
+          margin: 0 1em;
+        }
+      </style>
+    </section>
+  </body>
+  <script>
+    const spans = document.querySelectorAll("#choose-content>span");
+    var editContent = document.getElementById("edit-content");
+    document.querySelectorAll("#choose-content>span").forEach((a) => {
+      a.addEventListener("click", function () {
+        editContent.appendChild(a.cloneNode(true));
+      });
+    });
+  </script>
+</html>
