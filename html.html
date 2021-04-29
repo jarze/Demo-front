@@ -1,0 +1,157 @@
+<!--
+ * @Autor: jarze
+ * @Date: 2020-06-22 16:17:14
+ * @Desc: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML</title>
+    <style>
+      @supports (@counter-style) {
+      }
+      @counter-style circled-alpha {
+        system: fixed;
+        symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+        suffix: ' ';
+      }
+      ul {
+        list-style: circled-alpha;
+      }
+
+      li:first-line {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          1哈哈哈哈哈哈哈gnreklgnr;eng;rnethgo;nrt;ohnrt;ionhot你；i哦个v呢日哦好难过感觉热哦i感觉哦儿童画胡特日哦好几头额
+        </li>
+        <li>
+          2哈哈哈哈哈哈哈gnreklgnr;eng;rnethgo;nrt;ohnrt;ionhot你；i哦个v呢日哦好难过感觉热哦i感觉哦儿童画胡特日哦好几头额
+        </li>
+        <li>
+          3哈哈哈哈哈哈哈gnreklgnr;eng;rnethgo;nrt;ohnrt;ionhot你；i哦个v呢日哦好难过感觉热哦i感觉哦儿童画胡特日哦好几头额
+        </li>
+        <li>
+          4哈哈哈哈哈哈哈gnreklgnr;eng;rnethgo;nrt;ohnrt;ionhot你；i哦个v呢日哦好难过感觉热哦i感觉哦儿童画胡特日哦好几头额
+        </li>
+        <li>
+          5哈哈哈哈哈哈哈gnreklgnr;eng;rnethgo;nrt;ohnrt;ionhot你；i哦个v呢日哦好难过感觉热哦i感觉哦儿童画胡特日哦好几头额
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2><code>ins, del...</code></h2>
+      <del>del</del> | <ins>ins</ins> | <mark>mark</mark> | <i>i</i> |
+      <q>q</q> | <small>small</small> | <big>big</big> | <sub>sub</sub> |
+      <sup>sup</sup> |
+      <ruby> ruby <rt> rt </rt> </ruby>
+      <ruby> 漢 <rt> ㄏㄢˋ </rt> </ruby>
+      <ruby>饕餮 <rt>tāo tiè</rt></ruby>
+      是古代中国神话传说中的一种神秘怪物，别名叫
+      <ruby>狍鸮 <rt>páo xiāo</rt></ruby
+      >，古书《山海经·北次二经》介绍其特点是：其形状如羊身人面，眼在腋下，虎齿人手。
+    </div>
+    <hr />
+    <div style="display: inline-block">
+      <h2><code>dl, dt</code></h2>
+      <dl>
+        <dt>计算机</dt>
+        <dd>用来计算的仪器 ... ...</dd>
+        <dt>显示器</dt>
+        <dd>以视觉方式显示信息的装置 ... ...</dd>
+      </dl>
+    </div>
+    <hr />
+    <div>
+      <h2><code>meter</code></h2>
+      <meter value="0.6">60%</meter>
+    </div>
+    <hr />
+    <div>
+      <h2><code>progress</code></h2>
+      <progress value="22" max="100"></progress>
+      <progress />
+    </div>
+    <hr />
+    <div>
+      <h2><code>fieldset, legend</code></h2>
+      <form>
+        <fieldset>
+          <legend>health information</legend>
+          height: <input type="text" /> weight: <input type="text" />
+        </fieldset>
+      </form>
+    </div>
+    <div>
+      <h2><code>input, output</code></h2>
+      <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0 <input type="range" id="a" value="50" />100 +<input
+          type="number"
+          id="b"
+          value="50"
+        />
+        =<output name="x" for="a b"></output>
+      </form>
+    </div>
+    <div>
+      <h2><code>map,area</code></h2>
+      <img
+        src="./static/eg_planets.jpg"
+        border="0"
+        usemap="#planetmap"
+        alt="Planets"
+      />
+
+      <map name="planetmap" id="planetmap">
+        <area
+          shape="circle"
+          coords="180,139,14"
+          href="./edit.html"
+          target="_blank"
+          alt="Venus"
+        />
+
+        <area
+          shape="circle"
+          coords="129,161,10"
+          href="./test1.html"
+          target="_blank"
+          alt="Mercury"
+        />
+
+        <area
+          shape="rect"
+          coords="0,0,110,260"
+          href="./edit.html"
+          target="_blank"
+          alt="Sun"
+        />
+      </map>
+    </div>
+    <div>
+      <h2><code>details, summary</code></h2>
+      <details>
+        <summary>Copyright 2011.</summary>
+        <p>
+          All pages and graphics on this web site are the property of W3School.
+        </p>
+      </details>
+    </div>
+    <div>
+      <h2></h2>
+    </div>
+    <div>
+      <h2></h2>
+    </div>
+    <div>
+      <h2></h2>
+    </div>
+  </body>
+</html>
