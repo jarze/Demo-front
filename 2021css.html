@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2021.CSS</title>
+    <style>
+      :root {
+        --red: #d30302;
+        --pink: #e10361;
+        --purple: #4003e6;
+        --blue: #00a3d5;
+        --green: #02c435;
+        --yellow: #b48505;
+        --white: #fff;
+        --gray: gainsboro;
+        --black: black;
+      }
+      body {
+        background-color: var(--black);
+        margin: 0;
+        font-size: 36px;
+      }
+      main {
+        max-block-size: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        scroll-snap-align: start;
+        box-sizing: border-box;
+        border: 1px solid var(--gray);
+        color: var(--white);
+      }
+      section:nth-child(odd) {
+        background-color: var(--white);
+        color: var(--black);
+      }
+
+      div:focus-within > span {
+        padding: 1em;
+        border: 1px dashed var(--yellow);
+      }
+      div.color-ani {
+        animation: change 3s infinite;
+      }
+
+      @keyframes change {
+        0% {
+          color: #f00;
+        }
+        100% {
+          color: #00a3d5;
+        }
+      }
+
+      div.sec-3 {
+        width: 50%;
+        height: 50%;
+        border-radius: 30px;
+        border: 2px solid #000;
+        box-shadow: 0 0 0.2em 0.1em #9acb, 0 0 0.1em #abc,
+          -0.2em -0.2em 0.2em 0.1em #cdfc, -0.27em -0.27em 0.1em 0.2em #1246,
+          0.25em -0.25em 0.28em 0.22em #345c, 0.3em 0.3em 0.35em 0.24em #123c,
+          -0.25em 0.25em 0.28em 0.22em #345c, 0 0 0 0.48em #89a,
+          1.2em 1.2em 1.6em 0.3em #012;
+      }
+
+      .g-contrast {
+        filter: contrast(10) hue-rotate(0);
+        width: 300px;
+        height: 400px;
+        background-color: #000;
+        overflow: hidden;
+        /* -webkit-animation: hueRotate 10s infinite linear; */
+        /* animation: hueRotate 10s infinite linear; */
+      }
+      .g-circle {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        box-sizing: border-box;
+        filter: blur(8px);
+      }
+      .g-circle::before {
+        content: '';
+        position: absolute;
+        width: 176px;
+        height: 176px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #000;
+        z-index: 10;
+      }
+      .g-circle::after {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0);
+        width: 200px;
+        height: 200px;
+        background-color: #00ff6f;
+        border-radius: 42% 38% 62% 49%/45%;
+        /* -webkit-animation: rotate 10s infinite linear; */
+        /* animation: rotate 10s infinite linear; */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div><span>😄</span><input type="text" /></div>
+      </section>
+      <section><div class="color-ani">Color Animation</div></section>
+      <section>
+        <div class="sec-3">
+          🔥🔥🔥
+
+          <div class="g-contrast"><div class="g-circle"></div></div>
+        </div>
+      </section>
+      <section>
+        <style>
+          @keyframes top {
+            0% {
+              top: 0;
+            }
+            100% {
+              top: -3840px;
+            }
+          }
+          @keyframes top1 {
+            0% {
+              top: 0;
+            }
+            100% {
+              top: -2591px;
+            }
+          }
+        </style>
+        <h2>Animation steps()</h2>
+        <div style="width: 540px; height: 192px; overflow: hidden">
+          <img
+            src="./assets/640-1.png"
+            alt=""
+            style="
+              position: relative;
+              width: 100%;
+              animation: top 1s infinite steps(20);
+            "
+          />
+          <img src="./assets/cat.png" alt="" />
+        </div>
+      </section>
+      <section>
+        <div style="width: 1600px; height: 200px; overflow: hidden">
+          <img
+            src="./assets/cat.png"
+            alt=""
+            style="
+              position: relative;
+              width: 100%;
+              animation: top1 1s infinite steps(13);
+            "
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
