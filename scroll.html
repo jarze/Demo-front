@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New in Chrome 115</title>
+    <style>
+      style[contenteditable] {
+        display: block;
+        white-space: pre;
+        font-family: Consolas, Monaco, monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div id="progress"></div> -->
+    <main>
+      <div id="progress"></div>
+      <dl>
+        <dt>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline/scroll">scroll()</a>
+        </dt>
+        <dd>
+          CSS函数可用于指示可滚动元素 ( scroller )
+          和滚动条轴，这将提供匿名滚动进度时间轴以对当前元素进行动画处理。通过在顶部和底部（或左侧和右侧）之间滚动滚动条来推进滚动进度时间线。滚动范围中的位置将转换为进度百分比
+          — 开始时为 0%，结束时为 100%。scroll() animation-timeline
+        </dd>
+        <dt>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline">animation-timeline</a>
+        </dt>
+        <dd></dd>
+      </dl>
+      <style contenteditable="true">
+        @keyframes grow-progress {
+          from {
+            transform: scaleX(0);
+          }
+
+          to {
+            transform: scaleX(1);
+          }
+        }
+
+        #progress {
+          position: sticky;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 1em;
+          background: aquamarine;
+          transform-origin: 0 50%;
+          animation: grow-progress auto linear;
+          animation-timeline: scroll();
+        }
+
+        main {
+          width: max(30vw, 200px);
+          height: 200px;
+          overflow-y: scroll;
+          margin: 0 auto;
+          position: relative;
+          border: 1px solid #000;
+        }
+
+        main img {
+          max-width: 100%;
+        }
+      </style>
+      <p>
+        滚动动画
+        用滚动驱动的动画是网站上非常常见的用户体验模式，比如当页面向前或向后滚动时，对应的动画也会向前或向后移动。
+        比如下面图中这种比较常见的，页面顶部的进度条随着滚动而变化：
+      </p>
+      <img src="./assets/scroll.jpg" alt="" />
+    </main>
+  </body>
+
+</html>
